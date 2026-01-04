@@ -1,0 +1,92 @@
+export const pokemonTypes = [
+  {
+    name: "normal",
+    color: "#A8A77A",
+    shadow: "0 4px 12px 0 rgba(168, 167, 122, 0.6)",
+    isSelected: false,
+  },
+  {
+    name: "fire",
+    color: "#EE8130",
+    shadow: "0 4px 12px 0 rgba(238, 129, 48, 0.6)",
+    isSelected: false,
+  },
+  {
+    name: "electric",
+    color: "#F7D02C",
+    shadow: "0 4px 12px 0 rgba(247, 208, 44, 0.6)",
+    isSelected: false,
+  },
+  {
+    name: "ice",
+    color: "#96D9D6",
+    shadow: "0 4px 12px 0 rgba(150, 217, 214, 0.6)",
+    isSelected: false,
+  },
+  {
+    name: "poison",
+    color: "#A33EA1",
+    shadow: "0 4px 12px 0 rgba(163, 62, 161, 0.6)",
+    isSelected: false,
+  },
+  {
+    name: "bug",
+    color: "#A6B91A",
+    shadow: "0 4px 12px 0 rgba(166, 185, 26, 0.6)",
+    isSelected: false,
+  },
+  {
+    name: "ghost",
+    color: "#735797",
+    shadow: "0 4px 12px 0 rgba(115, 87, 151, 0.6)",
+    isSelected: false,
+  },
+  {
+    name: "water",
+    color: "#6390F0",
+    shadow: "0 4px 12px 0 rgba(99, 144, 240, 0.6)",
+    isSelected: false,
+  },
+  {
+    name: "grass",
+    color: "#7AC74C",
+    shadow: "0 4px 12px 0 rgba(122, 199, 76, 0.6)",
+    isSelected: false,
+  },
+  {
+    name: "fighting",
+    color: "#C22E28",
+    shadow: "0 4px 12px 0 rgba(194, 46, 40, 0.6)",
+    isSelected: false,
+  },
+  {
+    name: "ground",
+    color: "#E2BF65",
+    shadow: "0 4px 12px 0 rgba(226, 191, 101, 0.6)",
+    isSelected: false,
+  },
+  {
+    name: "psychic",
+    color: "#F95587",
+    shadow: "0 4px 12px 0 rgba(249, 85, 135, 0.6)",
+    isSelected: false,
+  },
+  {
+    name: "rock",
+    color: "#B6A136",
+    shadow: "0 4px 12px 0 rgba(182, 161, 54, 0.6)",
+    isSelected: false,
+  },
+  {
+    name: "dragon",
+    color: "#6F35FC",
+    shadow: "0 4px 12px 0 rgba(111, 53, 252, 0.6)",
+    isSelected: false,
+  },
+  {
+    name: "fairy",
+    color: "#D685AD",
+    shadow: "0 4px 12px 0 rgba(214, 133, 173, 0.6)",
+    isSelected: false,
+  },
+];

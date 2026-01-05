@@ -49,6 +49,33 @@
   padding: 0;
 }
 
+button,
+[type="button"],
+[type="submit"],
+[type="reset"] {
+  /* remove default appearance */
+  appearance: none;
+  -webkit-appearance: none;
+
+  /* box-model & inherited typography */
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: none;
+
+  font: inherit; /* inherit family, size, weight, line-height */
+  color: inherit; /* inherit text color */
+
+  /* optional: remove blue iOS button text */
+  text-decoration: none;
+
+  /* keep pointer cursor for non-disabled buttons */
+  cursor: pointer;
+
+  /* outline only on keyboard focus (not mouse-click) if you use :focus-visible*/
+  outline: none; /* you’ll add your own focus style later */
+}
+
 h1 {
   font-family: Orbitron;
   font-size: 44px;
@@ -64,7 +91,7 @@ h2 {
   font-style: normal;
   font-weight: 600;
   line-height: 125%; /* 40px */
-  color: #E5E5E5;
+  color: #e5e5e5;
 }
 
 h3 {
@@ -88,7 +115,7 @@ h5 {
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
-  line-height: 125%; /* 17.5px */ 
+  line-height: 125%; /* 17.5px */
 }
 
 .p1r {
@@ -110,12 +137,12 @@ h5 {
 }
 
 .p2r {
- /* Body/14px/Regular */
+  /* Body/14px/Regular */
   font-family: Quantico;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 21px */ 
+  line-height: 150%; /* 21px */
 }
 
 .p2b {
@@ -127,7 +154,7 @@ h5 {
   line-height: 150%; /* 21px */
 }
 
-.p3r{
+.p3r {
   /* Body/12px/Regular */
   font-family: Quantico;
   font-size: 12px;
@@ -136,7 +163,7 @@ h5 {
   line-height: 150%; /* 18px */
 }
 
-.p3b{
+.p3b {
   /* Body/12px/Bold */
   font-family: Quantico;
   font-size: 12px;
@@ -145,22 +172,25 @@ h5 {
   line-height: 150%; /* 18px */
 }
 
+p {
+  font-family: Quantico;
+}
+
 body {
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  background: var(--Neutral-N100, #0D0D0D); 
+  background: var(--Neutral-N100, #0d0d0d);
 }
 
-#root{
-  width: 100%
+#root {
+  width: 100%;
 }
-
 
 /* Header */
 
-header{
+header {
   display: flex;
   width: 100%;
   padding: 19px 24px;
@@ -168,23 +198,21 @@ header{
   align-items: center;
 }
 
-.logo{
-  color: #E5E5E5;
+.logo {
+  color: #e5e5e5;
 }
 
-nav{
+nav {
   display: flex;
   height: 30px;
   width: 100%;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  flex: 1 0 0; 
+  flex: 1 0 0;
 }
 
-
-.nav-links{
-  
+.nav-links {
   display: flex;
   padding: 0 16px;
   justify-content: center;
@@ -194,8 +222,8 @@ nav{
   list-style-type: none;
 }
 
-.nav-link{
-  color: #E5E5E5;
+.nav-link {
+  color: #e5e5e5;
   text-decoration: none;
   margin: 0;
   padding: 0;
@@ -206,39 +234,35 @@ nav{
   line-height: 125%;
 }
 
-
 /* Hero */
 
-.hero-image-wrapper{
+.hero-image-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
-
-
-
 /* Main */
 
-.sectionPokedex{
+.sectionPokedex {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 36px;
   align-self: stretch;
   padding-top: 36px;
+  padding-bottom: 36px;
 }
 
 #search {
-  width: 35%; 
+  width: 35%;
   min-width: 781px;
   padding: 10px 16px;
 
-  background-color: #1E1E1E;
-  color: #E5E5E5;
+  background-color: #1e1e1e;
+  color: #e5e5e5;
 
-  border: 1px solid #2A2A2A;
+  border: 2px solid #2a2a2a;
   border-radius: 9999px; /* pill shape */
 
   font-family: "Quantico", sans-serif;
@@ -254,8 +278,14 @@ nav{
 }
 
 #search:focus {
-  border-color: #00FF9F;
-  box-shadow: 0 0 0 2px rgba(0, 255, 159, 0.25); 
+  /* CRITICAL STEP 1: Set a solid color background clipped to the padding area. */
+  /* This masks the center of the gradient behind it, keeping the inside dark gray */
+  background: linear-gradient(#1e1e1e, #1e1e1e) padding-box,
+    /* CRITICAL STEP 2: The actual red/white gradient for the border */
+      linear-gradient(to bottom, #fb1b1b, #ffffff) border-box;
+
+  /* CRITICAL STEP 3: The border must be transparent for the background gradient to show through */
+  border-color: transparent;
 }
 
 .filter-viewport {
@@ -284,6 +314,11 @@ nav{
   flex-direction: column;
   align-items: flex-start;
   color: var(--primary-accent);
+  font-family: Quantico;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%; /* 1.5625rem */
 }
 
 .card {
@@ -301,20 +336,8 @@ nav{
   position: relative;
 }
 
-.fav-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  align-self: stretch;
-  position: absolute;
-  top: 12px;
-  right: 12px;
-}
-
-.fav-img {
-  width: 30px;
-  height: 28px;
-  aspect-ratio: 15/14;
+.pokemon-genus {
+  color: var(--neutral-900);
 }
 
 .page-btns-wrapper {
@@ -328,6 +351,7 @@ nav{
 .filter-viewport {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
   gap: 16px;
@@ -347,4 +371,18 @@ nav{
   background: transparent;
   color: var(--neutral-900); /* fallback for unselected text */
   transition: all 0.2s ease;
+
+  /* font */
+  font-family: Quantico;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 1.5625rem */
+}
+
+.pokedex-header {
+  background: linear-gradient(179deg, #fb1b1b 48.89%, #fff 68.99%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

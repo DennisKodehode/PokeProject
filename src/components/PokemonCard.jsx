@@ -24,11 +24,8 @@ export default function PokemonCard({ pokemon, types }) {
     };
   }, [getGenus, pokemon.id]);
 
-
   return (
     <div className="card" style={typeStyle}>
-      
-
       <h2>{pokemon.name}</h2>
 
       <img
@@ -39,7 +36,7 @@ export default function PokemonCard({ pokemon, types }) {
         loading="lazy"
       />
 
-      <p>{genus ? `The ${genus}` : ""}</p>
+      <h4 className="pokemon-genus">{genus ? `The ${genus}` : ""}</h4>
     </div>
   );
 }

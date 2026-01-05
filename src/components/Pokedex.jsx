@@ -9,8 +9,11 @@ import Pagination from "./Pagination.jsx";
 const PAGE_SIZE = 9;
 
 export const Pokedex = () => {
-    
-    const { data: pokemonsData, loading, error } = usePokemonList({ limit: 151, offset: 0 });
+  const {
+    data: pokemonsData,
+    loading,
+    error,
+  } = usePokemonList({ limit: 151, offset: 0 });
   const [page, setPage] = useState(1);
   const [searchText, setSearchText] = useState("");
   const [selectedTypes, setSelectedTypes] = useState(() => new Set());
@@ -19,8 +22,10 @@ export const Pokedex = () => {
     const search = searchText.trim().toLowerCase();
     return pokemonsData.filter((pokemon) => {
       const primaryType = pokemon.types?.[0]?.type?.name;
-      const matchesType = selectedTypes.size === 0 || selectedTypes.has(primaryType);
-      const matchesSearch = !search || pokemon.name.toLowerCase().includes(search);
+      const matchesType =
+        selectedTypes.size === 0 || selectedTypes.has(primaryType);
+      const matchesSearch =
+        !search || pokemon.name.toLowerCase().includes(search);
       return matchesType && matchesSearch;
     });
   }, [pokemonsData, searchText, selectedTypes]);
@@ -51,37 +56,32 @@ export const Pokedex = () => {
     setPage(1);
   };
 
-    return (
-        <section className="sectionPokedex">
-            <h2>Pokedex</h2>
-            <Search value={searchText} onChange={onSearchChange}/>
-            
+  return (
+    <section className="sectionPokedex">
+      <h2 className="pokedex-header">Pokedex</h2>
+      <Search value={searchText} onChange={onSearchChange} />
 
-            <TypeFilters
-                types={pokemonTypes}
-                selectedTypes={selectedTypes}
-                onToggle={onToggleType}
-            />
+      <TypeFilters
+        types={pokemonTypes}
+        selectedTypes={selectedTypes}
+        onToggle={onToggleType}
+      />
 
-        {loading && <p>Loading Pokédex…</p>}
-        {error && <p>{error}</p>}
+      {loading && <p>Loading Pokédex…</p>}
+      {error && <p>{error}</p>}
 
-        {!loading && !error && (
-            <>
-            <PokemonGrid
-                pokemons={pageItems}
-                types={pokemonTypes}
-            />
+      {!loading && !error && (
+        <>
+          <PokemonGrid pokemons={pageItems} types={pokemonTypes} />
 
-            <Pagination
-                page={currentPage}
-                maxPage={maxPage}
-                onPrev={() => setPage((p) => Math.max(1, p - 1))}
-                onNext={() => setPage((p) => Math.min(maxPage, p + 1))}
-            />
-            </>
-        )}
-
-        </section>
-    )
-}
+          <Pagination
+            page={currentPage}
+            maxPage={maxPage}
+            onPrev={() => setPage((p) => Math.max(1, p - 1))}
+            onNext={() => setPage((p) => Math.min(maxPage, p + 1))}
+          />
+        </>
+      )}
+    </section>
+  );
+};

@@ -29,7 +29,7 @@ export default function PokemonCard({ pokemon, types }) {
       <h2>{pokemon.name}</h2>
 
       <img
-        src={`/images/${pokemon.name}.png`}
+        src={`./images/${pokemon.name}.png`}
         width={150}
         height={150}
         alt={pokemon.name}

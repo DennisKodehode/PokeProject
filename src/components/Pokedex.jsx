@@ -59,7 +59,7 @@ export const Pokedex = () => {
 
   return (
     <section className="sectionPokedex">
-      <CurvedHeader text="Pokedex" />
+      <CurvedHeader text="POKEDEX" />
       <Search value={searchText} onChange={onSearchChange} />
 
       <TypeFilters

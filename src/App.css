@@ -254,6 +254,32 @@ nav {
   padding-bottom: 36px;
 }
 
+.pokedex-header-wrapper {
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
+
+.curved-text-style {
+  font-family: Orbitron;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%; /* 6.6rem */
+  letter-spacing: 0.12rem;
+
+  background: linear-gradient(179deg, #fb1b1b 48.89%, #fff 68.99%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pokedex-header {
+  background: linear-gradient(179deg, #fb1b1b 48.89%, #fff 68.99%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 #search {
   width: 35%;
   min-width: 781px;
@@ -378,11 +404,4 @@ nav {
   font-style: normal;
   font-weight: 400;
   line-height: 125%; /* 1.5625rem */
-}
-
-.pokedex-header {
-  background: linear-gradient(179deg, #fb1b1b 48.89%, #fff 68.99%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }

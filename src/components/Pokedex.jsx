@@ -5,6 +5,7 @@ import Search from "./search.jsx";
 import TypeFilters from "./TypeFilters.jsx";
 import PokemonGrid from "./PokemonGrid.jsx";
 import Pagination from "./Pagination.jsx";
+import { CurvedHeader } from "./CurvedHeader.jsx";
 
 const PAGE_SIZE = 9;
 
@@ -58,7 +59,7 @@ export const Pokedex = () => {
 
   return (
     <section className="sectionPokedex">
-      <h2 className="pokedex-header">Pokedex</h2>
+      <CurvedHeader text="Pokedex" />
       <Search value={searchText} onChange={onSearchChange} />
 
       <TypeFilters
